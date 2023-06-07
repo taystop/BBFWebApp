@@ -1,4 +1,9 @@
+using BBFWebApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Add memory Database to container
+builder.Services.AddDbContext<MyDbContext>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

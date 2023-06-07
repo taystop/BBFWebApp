@@ -1,6 +1,43 @@
 ﻿@page
+@using BBFWebApp.Models;
 @model BBFWebApp.Pages.NewsModel
 @{
     <h1>News</h1>
-    
+
+    <form method="post">
+
+        <input type="number" name="id" />
+        <input type="text" name="Title" />
+        <input type="text" name="Body" />
+        <button type="submit">Add</button>
+
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach(News news in Model.News)
+            {
+                <tr>
+                    <td>
+                        @news.Id
+                    </td>
+                    <td>
+                        @news.Title
+                    </td>
+                    <td>
+                        @news.Body
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
 }
